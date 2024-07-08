@@ -1,7 +1,7 @@
 # covid-vaccine-appointment-ui
 Este repositório contém o frontend do sistema de agendamento de vacina para COVID-19. Desenvolvido em Angular, permite que os usuários agendem suas vacinas, consultem os agendamentos existentes e recebam notificações sobre suas reservas.
 
-_This repository contains the frontend of the COVID-19 vaccine appointment system. Developed in Angular, it allows users to schedule their vaccines, view existing appointments, and receive notifications about their bookings._
+_This repository contains the frontend of a COVID-19 vaccine appointment system. Developed in Angular, it allows users to schedule their vaccines, view existing appointments, and receive notifications about their bookings._
 
 #### Descrição:
 
@@ -72,43 +72,42 @@ agendamento for realizado.
 
 - As camadas do backend devem seguir o padrão adotado no treinamento:
  
-WebApi:
+1. WebApi:
 
-     -Implementar os controllers que disponibilizam as APIs para o
-frontend.
+     - Implementar os controllers que disponibilizam as APIs para o frontend.
 
-     -Criar endpoints para criar, ler, atualizar e deletar (CRUD)
+     - Criar endpoints para criar, ler, atualizar e deletar (CRUD)
   
-Business.Interface
+2. Business.Interface
 
-     -Criar as interfaces de todos os serviços de negócios.
+     - Criar as interfaces de todos os serviços de negócios.
    
-Business
+3. Business
 
-     -Implementar as regras de negócio necessárias.
+     - Implementar as regras de negócio necessárias.
    
-Entities:
+4. Entities:
 
-     -Criar as entidades de negócio, bem como os DTOs e Models necessários para a aplicação.
+     - Criar as entidades de negócio, bem como os DTOs e Models necessários para a aplicação.
 
-Validators:
+5. Validators:
 
-     -Criar as validações de negócio para garantir a integridade dos dados.
+     - Criar as validações de negócio para garantir a integridade dos dados.
 
-     -Utilizar o fluentvalidation ou realizar validações “manuais”.
+     - Utilizar o fluentvalidation ou realizar validações “manuais”.
    
-Repository.Interface
+6. Repository.Interface
 
-     -Criar as interfaces de todos os repositórios.
+     - Criar as interfaces de todos os repositórios.
    
-Repository
+7. Repository
 
-     -Mapear as entidades para o banco de dados utilizando Entity Framework.
+     - Mapear as entidades para o banco de dados utilizando Entity Framework.
 
-     -Implementar os repositórios e suas consultas.
+     - Implementar os repositórios e suas consultas.
    
-     -Não utilizar migrations.
+     - Não utilizar migrations.
    
-Implementação de testes unitários em sua respectiva camada:
+8. Implementação de testes unitários em sua respectiva camada:
 
-     -UnitTest: Utilizar a classe Moq para abstrair os retornos dos repositórios.
+     - UnitTest: Utilizar a classe Moq para abstrair os retornos dos repositórios.
