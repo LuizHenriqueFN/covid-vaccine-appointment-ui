@@ -4,9 +4,16 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 20px;
+  padding: 10px;
   background-color: mat.get-color-from-palette(mat.$blue-palette, 500);
   border-bottom: 1px solid mat.get-color-from-palette(mat.$cyan-palette, 700);
+  position: fixed;
+  top: 0;
+  width: 100%;
+
+  .home-link {
+    text-decoration: none;
+  }
 
   .logo-container {
     display: flex;
@@ -33,6 +40,7 @@
   .notifications-container {
     display: flex;
     align-items: center;
+    margin-right: 25px;
 
     .notifications-button {
       background: none;
