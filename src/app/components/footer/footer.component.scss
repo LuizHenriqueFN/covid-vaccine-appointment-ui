@@ -1,0 +1,33 @@
+.footer {
+  background-color: #f8f9fa;
+  padding: 20px 0;
+  color: #555;
+  font-size: 14px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+  }
+
+  p {
+    margin: 0;
+  }
+
+  .row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @media (max-width: 768px) {
+      flex-direction: column;
+    }
+  }
+
+  .text-right {
+    text-align: right;
+  }
+}
