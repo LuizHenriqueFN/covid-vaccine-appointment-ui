@@ -1,0 +1,38 @@
+@use '@angular/material' as mat;
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: mat.get-color-from-palette(mat.$blue-palette, 500);
+  border-bottom: 1px solid mat.get-color-from-palette(mat.$cyan-palette, 700);
+
+  .logo-container {
+    display: flex;
+    align-items: center;
+
+    .logo-button {
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
+
+    .logo {
+      height: 60px;
+    }
+  }
+
+  .notifications-container {
+    display: flex;
+    align-items: center;
+
+    .notifications-button {
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-size: 24px;
+      color: mat.get-color-from-palette(mat.$cyan-palette, A200);
+    }
+  }
+}
