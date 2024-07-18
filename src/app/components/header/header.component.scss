@@ -46,8 +46,9 @@
       background: none;
       border: none;
       cursor: pointer;
+      margin-right: 25px;
       font-size: 24px;
-      color: mat.get-color-from-palette(mat.$cyan-palette, A200);
+      color: mat.get-color-from-palette(mat.$blue-palette, 900);
     }
   }
 }

@@ -1,1 +1,38 @@
-<p>patient-list works!</p>
+<div class="container">
+  <h2>Patient List</h2>
+  <div class="box-list">
+    @if ((patients$ | async)?.length === 0){
+
+      <p>You don't have any registered patients</p>
+
+      } @else {
+        <table class="table">
+          <thead>
+            <tr>
+              <th class="border-radio1">ID</th>
+              <th>Name</th>
+              <th>Birth Date</th>
+              <th class="border-radio2">Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let patient of patients$ | async">
+              <td>{{ patient.id }}</td>
+              <td>{{ patient.name }}</td>
+              <td>{{ patient.birthDate | date:'dd/MM/yyyy' }}</td>
+              <td>
+                <div class="btn-action">
+                  <button type="button" (click)="editPatient(patient)" class="w-100 btn btn-primary button-color">
+                    Edit
+                  </button>
+                  <button type="button" (click)="deletePatient(patient)" class="w-100 btn btn-primary button-color-red">
+                    Delete
+                  </button>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      }
+  </div>
+</div>
