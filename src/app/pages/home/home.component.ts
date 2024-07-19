@@ -10,6 +10,8 @@ import { Router } from '@angular/router';
 })
 export class HomeComponent {
 
+
+
   constructor(private router: Router) {}
 
   navigateToAppointmentList() {
@@ -17,6 +19,10 @@ export class HomeComponent {
   }
 
   navigateToPatientList() {
+    this.router.navigate(['/patient-list']);
+  }
+
+  navigateToAppointmentForm() {
     this.router.navigate(['/patient-list']);
   }
 }
