@@ -1,17 +1,18 @@
 import { CommonModule, DatePipe } from '@angular/common';
-import { Component, inject } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
+import { MatIconModule } from '@angular/material/icon';
+import { Observable } from 'rxjs';
 import { Patient } from '../../model/patient.model';
 import { PatientService } from '../../services/patient.service';
-import { Observable} from 'rxjs';
 
 @Component({
   selector: 'app-patient-list',
   standalone: true,
-  imports: [CommonModule, DatePipe],
+  imports: [CommonModule, DatePipe, MatIconModule],
   templateUrl: './patient-list.component.html',
   styleUrl: './patient-list.component.scss'
 })
-export class PatientListComponent {
+export class PatientListComponent implements OnInit {
 
   private patientService = inject(PatientService);
 

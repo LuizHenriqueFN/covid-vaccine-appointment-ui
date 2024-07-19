@@ -1,1 +1,45 @@
-<p>appointment-list works!</p>
+<div class="container">
+  <h2>Appointment List</h2>
+  <div class="box-list">
+    @if ((appointments$ | async)?.length === 0){
+
+      <p>You don't have any registered appointments</p>
+
+      } @else {
+        <table class="table">
+          <thead>
+            <tr>
+              <th class="border-radio-left">ID</th>
+              <th>Appointment Date</th>
+              <th>Appointment Time</th>
+              <th>Status</th>
+              <th>Patient Name</th>
+              <th class="border-radio-right">Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let appointment of appointments$ | async">
+              <td>{{ appointment.id }}</td>
+              <td>{{ appointment.appointmentDate | date:'dd/MM/yyyy' }}</td>
+              <td>{{ appointment.appointmentTime }}</td>
+              <td>{{ appointment.statusDescription }}</td>
+              <td>{{ appointment.patient.name }}</td>
+              <td>
+                <div class="btn-action">
+                  <button mat-icon-button type="button" (click)="viewAppointment(appointment)" class="w-100 btn btn-primary button-color">
+                    <mat-icon>visibility</mat-icon>
+                  </button>
+                  <button mat-icon-button type="button" (click)="editAppointment(appointment)" class="w-100 btn btn-primary button-color">
+                    <mat-icon>edit</mat-icon>
+                  </button>
+                  <button mat-icon-button type="button" (click)="deleteAppointment(appointment)" class="w-100 btn btn-primary button-color-red">
+                    <mat-icon>delete</mat-icon>
+                  </button>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      }
+  </div>
+</div>
