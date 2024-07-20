@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Appointment } from '../model/appointment.model';
+import { AppointmentLimit } from '../model/appointmentLimit.model';
 
 @Injectable({
   providedIn: 'root'
@@ -13,6 +14,14 @@ export class AppointmentService {
 
   getAppointments(): Observable<Appointment[]> {
     return this.http.get<Appointment[]>(this.api);
+  }
+
+  getAppointmentLimit(aptLimit: AppointmentLimit): Observable<AppointmentLimit> {
+    return this.http.post<AppointmentLimit>(`${this.api}/limit`, aptLimit);
+  }
+
+  getAppointmentsByFilter(aptLimit: AppointmentLimit): Observable<AppointmentLimit[]> {
+    return this.http.post<AppointmentLimit[]>(`${this.api}/Filter`, aptLimit);
   }
 
   getAppointmentById(id: number): Observable<Appointment> {

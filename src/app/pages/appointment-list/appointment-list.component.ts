@@ -23,12 +23,10 @@ export class AppointmentListComponent implements OnInit {
 
   viewAppointment(appointment: Appointment): void {
     console.log('Viewing appointment:', appointment);
-    // Implement view logic here
   }
 
   editAppointment(appointment: Appointment): void {
     console.log('Editing appointment:', appointment);
-    // Implement edit logic here
   }
 
   deleteAppointment(appointment: Appointment): void {
