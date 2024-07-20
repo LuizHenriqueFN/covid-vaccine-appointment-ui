@@ -1,0 +1,39 @@
+.appointment-form-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f0f0f0;
+
+  form {
+    width: 100%;
+    max-width: 600px;
+    margin: 20px;
+  }
+
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .full-width {
+    width: 100%;
+  }
+
+  mat-card {
+    padding: 20px;
+  }
+
+  mat-card-title {
+    text-align: center;
+    font-size: 2em;
+    margin: 20px;
+  }
+
+  mat-card-actions {
+    display: flex;
+    justify-content: center;
+    padding-top: 20px;
+  }
+}

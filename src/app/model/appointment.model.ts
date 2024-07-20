@@ -6,4 +6,5 @@ export type Appointment = {
   appointmentTime: string;
   statusDescription: string;
   patient: Patient;
+  patientId: number;
 }

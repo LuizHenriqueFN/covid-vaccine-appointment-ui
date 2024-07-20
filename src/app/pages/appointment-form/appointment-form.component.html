@@ -1,0 +1,36 @@
+<div class="appointment-form-container">
+  <form [formGroup]="appointmentForm" (ngSubmit)="onSubmit()">
+    <mat-card>
+      <mat-card-title>Appointment Form</mat-card-title>
+      <mat-card-content>
+        <div class="form-group">
+          <mat-form-field class="full-width" appearance="fill">
+            <mat-label>Appointment Date</mat-label>
+            <input matInput [matDatepicker]="appointmentDatePicker" formControlName="appointmentDate" (dateChange)="onDateChange()" required>
+            <mat-datepicker-toggle matSuffix [for]="appointmentDatePicker"></mat-datepicker-toggle>
+            <mat-datepicker #appointmentDatePicker></mat-datepicker>
+          </mat-form-field>
+
+          <mat-form-field class="full-width" appearance="fill">
+            <mat-label>Appointment Time</mat-label>
+            <mat-select formControlName="appointmentTime" required>
+              <mat-option *ngFor="let time of availableTimes" [value]="time" (onSelectionChange)="onTimeChange($event)">{{ time }}</mat-option>
+            </mat-select>
+          </mat-form-field>
+
+          <mat-form-field class="full-width" appearance="fill">
+            <mat-label>Patient</mat-label>
+            <mat-select formControlName="patientId" required>
+              <mat-option *ngFor="let patient of patients$ | async" [value]="patient.id">
+                {{ patient.name }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-raised-button color="primary" type="submit" [disabled]="!appointmentForm.valid">Submit</button>
+      </mat-card-actions>
+    </mat-card>
+  </form>
+</div>
