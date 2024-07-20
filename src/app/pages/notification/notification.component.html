@@ -1,0 +1,49 @@
+<div class="notification-form-container">
+  <form [formGroup]="notificationForm" (ngSubmit)="onSubmit()">
+    <mat-card>
+      <mat-card-title>Notification</mat-card-title>
+      <mat-card-content>
+        <div class="form-group">
+          <mat-form-field class="full-width" appearance="fill">
+            <mat-label>Patient Name</mat-label>
+            <input matInput formControlName="patientName" required>
+          </mat-form-field>
+        </div>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-raised-button color="primary" type="submit" [disabled]="!notificationForm.valid">Submit</button>
+      </mat-card-actions>
+    </mat-card>
+  </form>
+</div>
+<div>
+  @if (renderTable && appointments.length > 0) {
+    <div class="container">
+      <h2>Notification List</h2>
+      <div class="box-list">
+        <table class="table">
+          <thead>
+            <tr>
+              <th class="border-radio-left">Appointment Date</th>
+              <th>Appointment Time</th>
+              <th class="border-radio-right">Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            @if (appointments.length === 0) {
+              <tr>
+                <td colspan="3">You don't have any registered notifications</td>
+              </tr>
+            } @else {
+              <tr *ngFor="let appointment of appointments">
+                <td>{{ appointment.appointmentDate| date:'dd/MM/yyyy' }}</td>
+                <td>{{ appointment.appointmentTime }}</td>
+                <td>{{ appointment.statusDescription }}</td>
+              </tr>
+            }
+          </tbody>
+        </table>
+      </div>
+    </div>
+  }
+</div>

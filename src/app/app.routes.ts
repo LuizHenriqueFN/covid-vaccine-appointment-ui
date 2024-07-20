@@ -49,5 +49,11 @@ export const routes: Routes = [
       },
     ]
   },
+  {
+    path: 'notification',
+    loadComponent: () => import('./pages/notification/notification.component').then(
+      (module) => module.NotificationComponent
+    )
+  },
   { path: '**', redirectTo: '/' },
 ];

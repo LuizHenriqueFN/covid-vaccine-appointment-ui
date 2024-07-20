@@ -1,5 +1,5 @@
 export type PatientFilter = {
-  id: number;
-  name: string;
-  birthDate: string;
+  id?: number;
+  name?: string;
+  birthDate?: string;
 }

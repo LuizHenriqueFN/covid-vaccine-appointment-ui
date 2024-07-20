@@ -3,6 +3,7 @@ import { inject, Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Appointment } from '../model/appointment.model';
 import { AppointmentLimit } from '../model/appointmentLimit.model';
+import { AppointmentFilter } from '../model/filters/appointment.filter';
 
 @Injectable({
   providedIn: 'root'
@@ -20,8 +21,8 @@ export class AppointmentService {
     return this.http.post<AppointmentLimit>(`${this.api}/limit`, aptLimit);
   }
 
-  getAppointmentsByFilter(aptLimit: AppointmentLimit): Observable<AppointmentLimit[]> {
-    return this.http.post<AppointmentLimit[]>(`${this.api}/Filter`, aptLimit);
+  getAppointmentsByFilter(filter: AppointmentFilter): Observable<Appointment[]> {
+    return this.http.post<Appointment[]>(`${this.api}/Filter`, filter);
   }
 
   getAppointmentById(id: number): Observable<Appointment> {

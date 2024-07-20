@@ -1,0 +1,150 @@
+@use '@angular/material' as mat;
+
+.container {
+  max-width: 800px;
+  margin: 200px auto;
+  padding: 20px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  border-radius: 8px;
+  background-color: #fff;
+
+  h2 {
+    color: mat.get-color-from-palette(mat.$blue-palette, 500);
+    margin-bottom: 20px;
+    text-align: center;
+  }
+
+  .table {
+    width: 100%;
+    border-collapse: collapse;
+    border-radius: 8px;
+
+    th, td {
+      padding: 12px;
+      text-align: left;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .border-radio-left {
+      border-radius: 20px 0 0 0;
+    }
+
+    .border-radio-right {
+      border-radius: 0 20px 0 0;
+    }
+
+    th {
+      background-color: mat.get-color-from-palette(mat.$blue-palette, 800);
+      color: white;
+    }
+
+    td {
+      background-color: #f9f9f9;
+    }
+
+    tr:hover {
+      background-color: #f1f1f1;
+    }
+
+    .btn-action {
+      display: flex;
+      gap: 10px;
+
+      .btn {
+        width: 100%;
+        padding: 5px 10px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        color: white;
+        font-size: 14px;
+
+        &.button-color {
+          background-color: mat.get-color-from-palette(mat.$blue-palette, 500);
+        }
+
+        &.button-color-red {
+          background-color: red;
+        }
+      }
+    }
+  }
+}
+.notification-form-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f0f0f0;
+
+  form {
+    width: 100%;
+    max-width: 600px;
+    margin: 20px;
+  }
+
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .full-width {
+    width: 100%;
+  }
+
+  mat-card {
+    padding: 20px;
+  }
+
+  mat-card-title {
+    text-align: center;
+    font-size: 2em;
+    margin: 20px;
+  }
+
+  mat-card-actions {
+    display: flex;
+    justify-content: center;
+    padding-top: 20px;
+  }
+}
+.notification-form-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f0f0f0;
+
+  form {
+    width: 100%;
+    max-width: 600px;
+    margin: 20px;
+  }
+
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .full-width {
+    width: 100%;
+  }
+
+  mat-card {
+    padding: 20px;
+  }
+
+  mat-card-title {
+    text-align: center;
+    font-size: 2em;
+    margin: 20px;
+  }
+
+  mat-card-actions {
+    display: flex;
+    justify-content: center;
+    padding-top: 20px;
+  }
+}
